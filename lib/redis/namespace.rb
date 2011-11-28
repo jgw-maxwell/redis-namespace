@@ -160,8 +160,7 @@ class Redis
 
     def initialize(namespace, options = {})
       @namespace = namespace
-      redis = (options[:redis] ? options[:redis] : Redis.current)
-      @redis = redis
+      @redis =  options[:redis] || Redis.current
     end
 
     # Ruby defines a now deprecated type method so we need to override it here
